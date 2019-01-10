@@ -29,7 +29,17 @@
   Call your class Employee and receive all the data in the constructor in the order listed above.
 */
 
-//Code Here
+class Employee {
+  constructor(fName, lName, email, age){
+    this.first_name = fName
+    this.last_name = lName
+    this.email = email
+    this.age = age
+  }
+  makeWidget(){
+    return `${this.first_name} ${this.last_name} Widget` 
+  }
+}
 
 
 
@@ -49,7 +59,24 @@
   Call your new class Manager
 */
 
-//Code Here
+class Manager {
+  constructor(fName, lName, email, age){
+    this.first_name = fName
+    this.last_name = lName
+    this.email = email
+    this.age = age
+    this.reports = []
+  }
+  makeWidget(){
+    return `${this.first_name} ${this.last_name} Widget` 
+  }
+  hire(employee){
+    this.reports.push(employee)
+  }
+  fire(index) {
+      this.reports.splice(index, 1)
+    }
+  }
 
 
 
@@ -75,8 +102,24 @@
   Call your new class ProgressiveManager
 */
 
-//Code Here
-
+class Manager {
+  constructor(fName, lName, email, age){
+    this.first_name = fName
+    this.last_name = lName
+    this.email = email
+    this.age = age
+    this.reports = []
+  }
+  makeWidget(){
+    return `${this.first_name} ${this.last_name} Widget` 
+  }
+  hire(employee){
+    this.reports.push(employee)
+  }
+  fire(index) {
+      this.reports.splice(index, 1)
+    }
+  }
 
 
 ////////// PROBLEM 4 - Black Diamond //////////
