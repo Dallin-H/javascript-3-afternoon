@@ -115,9 +115,8 @@ var cat = {
     2. Assign fluffy2ndFriend the name of Fluffy's 2nd friend.
 */
 
-//Code Here
-var grumpyActivity;
-var fluffy2ndFriend;
+var grumpyActivity = cat.catFriends[0].activities[1];
+var fluffy2ndFriend = cat.catFriends[1].name;
 
 
 
@@ -157,8 +156,12 @@ var myCar = {
     3. Change atFaultForAccident from true to false.
 */
 
-//Code Here
-
+function recordCleaner() {
+  for (let index = 0; index < myCar.accidents.length; index++) {
+    const element = myCar.accidents[index];
+    myCar.accidents[index].atFaultForAccident = false
+  }
+}
 
 
 ////////// PROBLEM 5 //////////
@@ -176,6 +179,36 @@ var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
     4. Return the modified numsArr.
 */
 
-//Code Here
+// function looper(arr) {
+//   let numsArr = []
+//  for (let index = 0; index < arr.length; index++) {
+//    let element = arr[index];
+//     for (let i = 0; i < element.length; i++) {
+//       let num = element[i];
+//       if(num % 2 === 0) {
+//         numsArr.push('even') 
+//       }
+//       else {numsArr.push('odd')
+//     }
+//   }
+//  }
+//   return numsArr
+// }
 
+// console.log(looper(numsArr))
 
+let looper = () => {
+  for (let index = 0; index < numsArr.length; index++) {
+    for (let j = 0; j < numsArr[index].length; j++) {
+      if (numsArr[index][j] % 2 === 0) {
+        numsArr[index][j] = 'even'
+      }
+      else {
+        numsArr[index][j] = 'odd'
+      }
+      
+    }
+    
+  }
+  return numsArr;
+}
