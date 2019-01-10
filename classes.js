@@ -102,22 +102,39 @@ class Manager {
   Call your new class ProgressiveManager
 */
 
-class Manager {
+class ProgressiveManager {
   constructor(fName, lName, email, age){
     this.first_name = fName
     this.last_name = lName
     this.email = email
     this.age = age
     this.reports = []
+    this.title = 'Not a manager'
+    this.bonus = 0
+    this.hireCount = 0
+
   }
   makeWidget(){
     return `${this.first_name} ${this.last_name} Widget` 
   }
   hire(employee){
     this.reports.push(employee)
+    this.hireCount++
+      if (this.hireCount >= 1 && this.hireCount <= 3){
+      this.title = 'Barely Manager'
+   }    else if (this.hireCount >= 4 && this.hireCount <= 10){
+        this.title = 'Mostly Manager'
+      } else if (this.hireCount >= 11 && this.hireCount <= 50){
+        this.title = 'Manager'
+      } else if (this.hireCount >= 51 && this.hireCount <= 100){
+        this.title = 'Manager Plus'
+      } else if (this.hireCount >= 101){
+        this.title = 'Bestest Manager'
+      }
   }
   fire(index) {
       this.reports.splice(index, 1)
+      this.bonus += 100
     }
   }
 
