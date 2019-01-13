@@ -171,7 +171,7 @@ class Machine {
 
   makeWidgets(num) {
     this.widgets_made_count += num
-    //increase wear_and_tear count by 1 for every 50
+    this.wear_and_tear_count += Math.floor(num / 50)
   }
 
   fixMachine() {
